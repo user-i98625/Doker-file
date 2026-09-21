@@ -5,7 +5,7 @@ FROM node:20-bookworm-slim
 RUN rm -rf /var/lib/apt/lists/* \
     && apt-get clean \
     && apt-get update -o Acquire::Retries=5 \
-    && apt-get install -y --no-install-recommends --fix-missing ffmpeg git \
+    && apt-get install -y --no-install-recommends --fix-missing ca-certificates ffmpeg git \
     && rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/user-i98625/OVL-MD-V2.git /ovl_bot
